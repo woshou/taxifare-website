@@ -38,9 +38,9 @@ https://woshou.github.io/taxi-fare-interface/
 
 
     # Call the API
-    response = requests.get("https://taxifare.lewagon.ai/predict", params=params)
-    prediction = response.json().get("prediction")
-    prediction
+response = requests.get("https://taxifare.lewagon.ai/predict", params=params)
+prediction = response.json().get("prediction")
+prediction
  # Display the full response for debugging purposes
     # Check for successful response
 # if response.status_code == 200:
