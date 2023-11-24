@@ -1,18 +1,17 @@
 import streamlit as st
 import requests
-'''
-# TaxiFareModel front
-'''
-'''
-'''
-# User input section
-date_time = st.text_input("Date and Time", "2023-11-24 12:00:00")
-pickup_longitude = st.number_input("Pickup Longitude", value=0.0)
-pickup_latitude = st.number_input("Pickup Latitude", value=0.0)
-dropoff_longitude = st.number_input("Dropoff Longitude", value=0.0)
-dropoff_latitude = st.number_input("Dropoff Latitude", value=0.0)
-passenger_count = st.number_input("Passenger Count", value=1, min_value=1)
+# Split the user input section into two columns
+col1, col2 = st.columns(2)
 
+# User input section - Column 1
+date_time = col1.text_input("Date and Time", "2023-11-24 12:00:00")
+pickup_longitude = col1.number_input("Pickup Longitude", value=0.0)
+pickup_latitude = col1.number_input("Pickup Latitude", value=0.0)
+
+# User input section - Column 2
+dropoff_longitude = col2.number_input("Dropoff Longitude", value=0.0)
+dropoff_latitude = col2.number_input("Dropoff Latitude", value=0.0)
+passenger_count = col2.number_input("Passenger Count", value=1, min_value=1)
 
 url = 'https://taxifare.lewagon.ai/predict'
 
