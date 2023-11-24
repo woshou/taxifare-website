@@ -34,7 +34,7 @@ if st.button("Predict Fare"):
         "passenger_count": passenger_count,
     }
     
-https://woshou.github.io/taxi-fare-interface/
+'https://woshou.github.io/taxi-fare-interface/'
 
 
     # Call the API
