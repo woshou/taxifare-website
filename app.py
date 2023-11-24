@@ -4,10 +4,6 @@ import requests
 # TaxiFareModel front
 '''
 '''
-
-if st.button("Open Custom Taxi Fare Interface"):
-    st.markdown('[Custom Taxi Fare Interface](https://woshou.github.io/taxi-fare-interface/)')
-
 '''
 # User input section
 date_time = st.text_input("Date and Time", "2023-11-24 12:00:00")
