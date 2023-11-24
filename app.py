@@ -4,11 +4,6 @@ import requests
 # TaxiFareModel front
 '''
 st.title("Taxi Fare Prediction")
-st.markdown('''
-Remember that there are several ways to output content into your web page...
-
-Either as with the title by just creating a string (or an f-string). Or as with this paragraph using the `st.` functions
-''')
 
 '''
 ## Here we would like to add some controllers in order to ask the user to select the parameters of the ride
@@ -38,19 +33,23 @@ if st.button("Predict Fare"):
         "dropoff_latitude": dropoff_latitude,
         "passenger_count": passenger_count,
     }
+    
+https://woshou.github.io/taxi-fare-interface/
+
 
     # Call the API
     response = requests.get("https://taxifare.lewagon.ai/predict", params=params)
-
+    prediction = response.json().get("prediction")
+    prediction
  # Display the full response for debugging purposes
     # Check for successful response
-if response.status_code == 200:
-        try:
-            # Extract and display the prediction
-            prediction = response.json().get("prediction")
-            if prediction is not None:
-                st.success(f"Predicted Taxi Fare: ${prediction:.2f}")
-        except Exception as e:
-            st.error(f"Error extracting prediction: {e}")
-        else:
-            st.text(response.text)
+# if response.status_code == 200:
+#         try:
+#             # Extract and display the prediction
+#             prediction = response.json().get("prediction")
+#             if prediction is not None:
+#                 st.success(f"Predicted Taxi Fare: ${prediction:.2f}")
+#         except Exception as e:
+#             st.error(f"Error extracting prediction: {e}")
+#         else:
+#             st.text(response.text)
